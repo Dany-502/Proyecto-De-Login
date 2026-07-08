@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Iniciar Sesión</title>
+    <link rel="stylesheet" href="css/login.css">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</head>
+
+<body>
+    <form id="login">
+        <img src="img/user.png" alt="user.png">
+        <label for="username">Usuario</label>
+        <input type="text" id="username" name="username" placeholder="Usuario o correo" oninput="validarcorreo()">
+        <span id="error-correo"></span>
+        <span id="exito-correo"></span>
+
+        <label for="password">Contraseña</label>
+        <input type="password" id="password" placeholder="Contraseña" required oninput="validarcontrasena()">
+        <span id="error-contraseña"></span>
+        <span id="exito-contraseña"></span>
+        <button type="submit">Iniciar Sesión</button>
+    </form>
+
+    <script src="js/login.js"></script>
+</body>
+
+</html>
