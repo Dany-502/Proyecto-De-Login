@@ -1,0 +1,268 @@
+/*VISUALES PARA EL SIDEBAR*/
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+}
+
+li {
+    list-style-type: none;
+}
+
+a {
+    list-style-type: none;
+}
+
+.sidebar {
+    position: fixed;
+    background: #0064fe;
+    width: 80px;
+    height: 100%;
+    left: 0;
+    transition: all .5s;
+    overflow-x: hidden;
+}
+
+.sidebar h2 {
+    color: white;
+    background: #3382fe;
+    font-size: 18px;
+    text-align: left;
+    padding-left: 20px;
+    line-height: 75px;
+    text-transform: uppercase;
+    font-weight: 500;
+    opacity: 0;
+    white-space: nowrap;
+    transition: all .5s;
+}
+
+.logo-ito {
+    width: 32px;
+    vertical-align: middle;
+    margin-right: 12px;
+    margin-top: -4px;
+}
+
+.sidebar ul a,
+.sidebar ul .menu-btn {
+    height: 100%;
+    width: 100%;
+    display: block;
+    line-height: 70px;
+    color: transparent;
+    padding-left: 28px;
+    font-size: 19px;
+    border-top: 1px solid #3382fe;
+    transition: .5s;
+    white-space: nowrap;
+    cursor: pointer;
+}
+
+ul li:hover a,
+ul li:hover .menu-btn {
+    transform: translate(-8px);
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.sidebar img {
+    width: 24px;
+    height: 24px;
+    margin-right: 15px;
+    vertical-align: middle;
+}
+
+#check {
+    display: none;
+}
+
+label #bar,
+label #time {
+    position: absolute;
+    cursor: pointer;
+}
+
+label #bar {
+    width: 45px;
+    height: 45px;
+    top: 15px;
+    left: 17px;
+    padding: 5px;
+    transition: all 0.5s ease;
+    z-index: 100;
+}
+
+label #time {
+    z-index: 11;
+    color: white;
+    padding: 4px 8px;
+    left: 190px;
+    top: 20px;
+    transition: all .5s;
+    font-size: 25px;
+}
+
+#check:checked~.sidebar {
+    width: 250px;
+}
+
+#check:checked~.sidebar h2 {
+    opacity: 1;
+}
+
+#check:checked~.sidebar ul a,
+#check:checked~.sidebar ul .menu-btn {
+    padding-left: 40px;
+    color: white;
+}
+
+#check:checked~label #bar {
+    left: 190px;
+}
+
+.bg {
+    height: 100vh;
+    background-image: url();
+}
+
+
+.toggle-submenu {
+    display: none;
+
+}
+
+.submenu {
+    max-height: 0;
+    overflow: hidden;
+    background: #0056dc;
+    transition: max-height 0.4s ease;
+}
+
+
+.submenu a {
+    font-size: 16px;
+    line-height: 50px;
+    padding-left: 55px;
+}
+
+#check:checked~.sidebar .submenu a {
+    padding-left: 70px;
+}
+
+
+#check:checked~.sidebar .toggle-submenu:checked~.submenu {
+    max-height: 200px;
+}
+
+
+.flecha {
+    width: 15px;
+    height: 15px;
+    float: right;
+    margin-right: 20px;
+    margin-top: 27px;
+    transition: all 0.3s;
+    opacity: 0;
+}
+
+#check:checked~.sidebar .flecha {
+    opacity: 1;
+}
+
+.toggle-submenu:checked~.menu-btn .flecha {
+    transform: rotate(180deg);
+}
+
+
+/*VISUALES PARA EL MODAL*/
+.contenedor_modal {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.modal {
+    width: 30rem;
+    min-height: 15rem;
+    height: auto;
+    background-color: #ffffff;
+    border-radius: 3px;
+    padding: 0.5rem;
+    position: relative;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.cerrar_modal {
+    position: absolute;
+    top: -.5rem;
+    right: -0.5rem;
+    color: white;
+    background-color: #ff4757;
+    padding: 0.25rem;
+    border-radius: 50%;
+    cursor: pointer;
+    z-index: 1;
+}
+
+/* Ocultar el modal por defecto usando una clase */
+.oculto {
+    display: none !important;
+}
+
+/* ESTILOS DEL FORMULARIO DENTRO DEL MODAL */
+.modal h3 {
+    text-align: center;
+    color: #0064fe;
+    margin-bottom: 20px;
+    font-size: 24px;
+}
+
+.form-group {
+    margin-bottom: 15px;
+    padding: 0 1rem;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    color: #333;
+    font-size: 14px;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 14px;
+}
+
+.form-group input:focus {
+    outline: none;
+    border-color: #0064fe;
+}
+
+.btn-submit {
+    width: calc(100% - 2rem);
+    margin: 10px 1rem;
+    padding: 12px;
+    background-color: #0064fe;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.btn-submit:hover {
+    background-color: #004bb5;
+}
