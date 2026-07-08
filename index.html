@@ -4,115 +4,27 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dashboard - Sistema</title>
-    <link rel="stylesheet" href="css/visualesIndex.css">
-    <script src="js/funcionesModal.js"></script>
-    <script src="js/validaciones.js"></script>
+    <title>Iniciar Sesión</title>
+    <link rel="stylesheet" href="css/login.css">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </head>
 
 <body>
+    <form id="login">
+        <img src="img/user.png" alt="user.png">
+        <label for="username">Usuario</label>
+        <input type="text" id="username" name="username" placeholder="Usuario o correo" oninput="validarcorreo()">
+        <span id="error-correo"></span>
+        <span id="exito-correo"></span>
 
-    <nav class="navbar">
-        <div class="user-menu-container">
-            <button id="user-menu-btn" class="user-btn">
-                <img src="img/usuario.png" alt="User" class="nav-user-icon">
-                <span id="user-name">Miguel Alberto</span>
-                <img src="img/flecha.png" class="nav-flecha">
-            </button>
+        <label for="password">Contraseña</label>
+        <input type="password" id="password" placeholder="Contraseña" required oninput="validarcontrasena()">
+        <span id="error-contraseña"></span>
+        <span id="exito-contraseña"></span>
+        <button type="submit">Iniciar Sesión</button>
+    </form>
 
-            <ul id="dropdown-menu" class="dropdown-content">
-                <li><a href="#" id="btn-logout">Cerrar Sesión</a></li>
-            </ul>
-        </div>
-    </nav>
-
-    <input type="checkbox" id="check">
-    <label for="check">
-        <img src="img/menu-hamburguesa.png" alt="menu" id="bar">
-    </label>
-
-    <div class="sidebar">
-        <h2><img src="img/ITO.png" alt="Logo ITO" class="logo-ito">Formulario</h2>
-        <ul>
-            <li><a href="#"><img src="img/hogar.png">Inicio</a></li>
-            <li>
-                <input type="checkbox" id="btn-usuarios" class="toggle-submenu">
-                <label for="btn-usuarios" class="menu-btn">
-                    <img src="img/usuario.png">Usuarios
-                    <img src="img/flecha.png" class="flecha">
-                </label>
-                <ul class="submenu">
-                    <li><a href="#" id="btn-abrir-modal"><img src="img/agregar-usuario.png">Capturar</a></li>
-                </ul>
-            </li>
-        </ul>
-    </div>
-
-    <div class="contenido-principal">
-        <div id="formulario-captura" class="contenedor-formulario" style="display: none;">
-            <div id="form-registro" class="simulated-form">
-                <h2>Captura de Datos</h2>
-
-                <div class="form-row full-width">
-                    <div class="grupoFormulario">
-                        <label for="nombre">Nombre Completo</label>
-                        <input type="text" id="nombre" placeholder="Ej. Ingrese su nombre completo"
-                            oninput="validarsololetras()">
-                        <span id="error-nombre"
-                            style="color: red; font-size: 12px; display: block; margin-top: 5px;"></span>
-                        <span id="exito-nombre"
-                            style="color: green; font-size: 12px; display: block; margin-top: 5px;"></span>
-                    </div>
-                </div>
-
-                <div class="form-row">
-                    <div class="grupoFormulario">
-                        <label for="username-registro">Correo Electrónico</label>
-                        <input type="email" id="username-registro" placeholder="estudiante@correo.com"
-                            oninput="validarcorreoRegistro()">
-                        <span id="error-correo-reg"
-                            style="color: red; font-size: 12px; display: block; margin-top: 5px;"></span>
-                        <span id="exito-correo-reg"
-                            style="color: green; font-size: 12px; display: block; margin-top: 5px;"></span>
-                    </div>
-                    <div class="grupoFormulario">
-                        <label for="num-control">Número de Control</label>
-                        <input type="text" id="num-control" placeholder="123456" oninput="validarlongitudControl()">
-                        <span id="error-control"
-                            style="color: red; font-size: 12px; display: block; margin-top: 5px;"></span>
-                        <span id="exito-control"
-                            style="color: green; font-size: 12px; display: block; margin-top: 5px;"></span>
-                    </div>
-                </div>
-
-                <div class="form-row">
-                    <div class="grupoFormulario">
-                        <label for="password-registro">Contraseña</label>
-                        <input type="password" id="password-registro" placeholder="••••••••"
-                            oninput="validarContrasenaEstricta()">
-                        <span id="error-contraseña-reg"
-                            style="color: red; font-size: 12px; display: block; margin-top: 5px;"></span>
-                        <span id="exito-contraseña-reg"
-                            style="color: green; font-size: 12px; display: block; margin-top: 5px;"></span>
-                    </div>
-                    <div class="grupoFormulario">
-                        <label for="fecha-nac">Fecha de Nacimiento</label>
-                        <input type="date" id="fecha-nac" oninput="validarFechaNacimiento()">
-                        <span id="error-fecha"
-                            style="color: red; font-size: 12px; display: block; margin-top: 5px;"></span>
-                        <span id="exito-fecha"
-                            style="color: green; font-size: 12px; display: block; margin-top: 5px;"></span>
-                    </div>
-                </div>
-
-                <div class="form-actions">
-                    <button type="button" class="btn-limpiar" id="btn-limpiar">Limpiar</button>
-                    <button type="button" class="btn-guardar-alumno" id="btn-guardar-alumno">Guardar Alumno</button>
-                </div>
-            </div>
-        </div>
-    </div>
-
+    <script src="js/login.js"></script>
 </body>
 
 </html>

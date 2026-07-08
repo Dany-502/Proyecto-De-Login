@@ -17,7 +17,7 @@ document.addEventListener('DOMContentLoaded', function () {
     if (btnSalir) {
         btnSalir.addEventListener('click', function (event) {
             event.preventDefault();
-            window.location.href = "login.html";
+            window.location.href = "index.html";
         });
     }
 

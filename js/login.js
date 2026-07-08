@@ -8,7 +8,7 @@ formulario.addEventListener('submit', function (event) {
     console.log("Contraseña ingresada:", contrasena);
 
     if (correo === "miguel@gmail.com" && contrasena === "Mike123!") {
-        window.location.href = "index.html";
+        window.location.href = "dashboard.html";
     } else {
         Swal.fire({
             icon: 'warning',
