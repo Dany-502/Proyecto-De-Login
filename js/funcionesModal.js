@@ -64,27 +64,35 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     const btnCaptura = document.getElementById('btn-abrir-modal');
-    const modalRegistro = document.getElementById('modal-registro');
-    const btnCerrarRegistro = document.getElementById('btn-cerrar-modal');
+    const modalRegistro = document.getElementById('formulario-captura');
     const formRegistro = document.getElementById('form-registro');
 
     const btnAlumnos = document.getElementById('btn-abrir-modal-alumnos');
-    const modalAlumnos = document.getElementById('modal-alumnos');
-    const btnCerrarAlumnos = document.getElementById('btn-cerrar-modal-alumnos');
+    const modalAlumnos = document.getElementById('formulario-alumnos');
     const formAlumnos = document.getElementById('form-alumnos');
 
-    if (btnCaptura) btnCaptura.addEventListener('click', (e) => { e.preventDefault(); modalRegistro.classList.remove('oculto'); });
-    if (btnCerrarRegistro) btnCerrarRegistro.addEventListener('click', () => modalRegistro.classList.add('oculto'));
+    if (btnCaptura) {
+        btnCaptura.addEventListener('click', (e) => { 
+            e.preventDefault(); 
+            modalRegistro.style.display = 'block'; 
+            modalAlumnos.style.display = 'none';
+        });
+    }
 
-    if (btnAlumnos) btnAlumnos.addEventListener('click', (e) => { e.preventDefault(); modalAlumnos.classList.remove('oculto'); });
-    if (btnCerrarAlumnos) btnCerrarAlumnos.addEventListener('click', () => modalAlumnos.classList.add('oculto'));
+    if (btnAlumnos) {
+        btnAlumnos.addEventListener('click', (e) => { 
+            e.preventDefault(); 
+            modalAlumnos.style.display = 'block'; 
+            modalRegistro.style.display = 'none';
+        });
+    }
 
     if (formRegistro) {
         formRegistro.addEventListener('submit', function (e) {
             e.preventDefault();
             if (validarsololetras() && validarcorreoRegistro() && validarContrasenaEstricta()) {
                 alert("¡Usuario capturado con éxito!");
-                modalRegistro.classList.add('oculto');
+                modalRegistro.style.display = 'none';
                 formRegistro.reset();
                 document.getElementById('exito-nombre').innerText = "";
                 document.getElementById('exito-correo-reg').innerText = "";
@@ -98,7 +106,7 @@ document.addEventListener('DOMContentLoaded', function () {
             e.preventDefault();
             if (validarlongitudControl() && validarEdad()) {
                 alert("¡Alumno guardado con éxito!");
-                modalAlumnos.classList.add('oculto');
+                modalAlumnos.style.display = 'none';
                 formAlumnos.reset();
                 document.getElementById('exito-control').innerText = "";
                 document.getElementById('exito-edad').innerText = "";
