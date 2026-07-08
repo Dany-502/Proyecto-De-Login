@@ -40,9 +40,7 @@
                     <img src="img/usuario.png">Usuarios
                     <img src="img/flecha.png" class="flecha">
                 </label>
-
                 <ul class="submenu">
-                    <li><a href="#" id="btn-abrir-modal-alumnos"><img src="img/usuario.png">Alumnos</a></li>
                     <li><a href="#" id="btn-abrir-modal"><img src="img/agregar-usuario.png">Capturar</a></li>
                 </ul>
             </li>
@@ -51,38 +49,42 @@
 
     <div class="contenido-principal">
         <div id="formulario-captura" class="contenedor-formulario" style="display: none;">
-            <h2>Captura de Usuario</h2>
-            <form id="form-registro">
-                <div class="grupoFormulario">
-                    <label for="nombre">Nombre de usuario</label>
-                    <input type="text" id="nombre" name="nombre" required>
+            <div id="form-registro" class="simulated-form">
+                <h2>Captura de Datos</h2>
+                <div class="form-row full-width">
+                    <div class="grupoFormulario">
+                        <label for="nombre">Nombre Completo</label>
+                        <input type="text" id="nombre" placeholder="Ej. Ingrese su nombre completo">
+                    </div>
                 </div>
-                <div class="grupoFormulario">
-                    <label for="username-registro">Correo Electrónico</label>
-                    <input type="email" id="username-registro" name="username-registro" placeholder="ejemplo@correo.com"
-                        required>
-                </div>
-                <div class="grupoFormulario">
-                    <label for="password-registro">Contraseña</label>
-                    <input type="password" id="password-registro" name="password-registro" required>
-                </div>
-                <button type="submit" class="btn-guardar">Guardar Usuario</button>
-            </form>
-        </div>
 
-        <div id="formulario-alumnos" class="contenedor-formulario" style="display: none;">
-            <h2>Formulario de Alumnos</h2>
-            <form id="form-alumnos">
-                <div class="grupoFormulario">
-                    <label for="num-control">Número de Control</label>
-                    <input type="text" id="num-control" name="num-control" placeholder="Ej. 123456" required>
+                <div class="form-row">
+                    <div class="grupoFormulario">
+                        <label for="username-registro">Correo Electrónico</label>
+                        <input type="email" id="username-registro" placeholder="estudiante@correo.com">
+                    </div>
+                    <div class="grupoFormulario">
+                        <label for="num-control">Número de Control</label>
+                        <input type="text" id="num-control" placeholder="123456">
+                    </div>
                 </div>
-                <div class="grupoFormulario">
-                    <label for="edad-alumno">Edad</label>
-                    <input type="number" id="edad-alumno" name="edad-alumno" placeholder="Ej. 20" required>
+
+                <div class="form-row">
+                    <div class="grupoFormulario">
+                        <label for="password-registro">Contraseña</label>
+                        <input type="password" id="password-registro" placeholder="••••••••">
+                    </div>
+                    <div class="grupoFormulario">
+                        <label for="fecha-nac">Fecha de Nacimiento</label>
+                        <input type="date" id="fecha-nac">
+                    </div>
                 </div>
-                <button type="submit" class="btn-guardar">Registrar Alumno</button>
-            </form>
+
+                <div class="form-actions">
+                    <button type="button" class="btn-limpiar" id="btn-limpiar">Limpiar</button>
+                    <button type="button" class="btn-guardar-alumno" id="btn-guardar-alumno">Guardar Alumno</button>
+                </div>
+            </div>
         </div>
     </div>
 

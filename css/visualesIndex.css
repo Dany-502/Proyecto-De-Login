@@ -29,7 +29,7 @@ a {
     height: 100%;
     left: 0;
     transition: all .5s cubic-bezier(0.4, 0, 0.2, 1);
-    overflow-x: hidden;
+    overflow: hidden;
     padding-top: 60px;
     box-shadow: 4px 0 15px rgba(0, 0, 0, 0.05);
     z-index: 998;
@@ -66,7 +66,7 @@ a {
     line-height: 70px;
     color: transparent;
     padding-left: 24px;
-    font-size: 16px;
+    font-size: 0;
     border-top: 1px solid rgba(255, 255, 255, 0.05);
     border-left: 4px solid transparent;
     transition: all .3s ease;
@@ -145,6 +145,7 @@ label #time {
 #check:checked~.sidebar ul .menu-btn {
     padding-left: 40px;
     color: #cbd5e1;
+    font-size: 16px;
 }
 
 #check:checked~label #bar {
@@ -511,4 +512,108 @@ label #time {
 .btn-guardar:hover {
     transform: translateY(-2px);
     box-shadow: 0 6px 16px rgba(37, 99, 235, 0.4);
+}
+
+/* ESTILOS PARA FORMULARIO SIMULADO */
+.simulated-form {
+    width: 100%;
+}
+
+.form-row {
+    display: flex;
+    gap: 20px;
+    margin-bottom: 15px;
+}
+
+.form-row .grupoFormulario {
+    flex: 1;
+    margin-bottom: 0;
+}
+
+.form-row.full-width .grupoFormulario {
+    flex: 100%;
+}
+
+.input-icon-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.input-icon-container .icon {
+    position: absolute;
+    left: 12px;
+    font-size: 18px;
+    color: #64748b;
+}
+
+.input-icon-container .icon-right {
+    position: absolute;
+    right: 12px;
+    font-size: 18px;
+    color: #64748b;
+    cursor: pointer;
+}
+
+.input-icon-container input {
+    width: 100%;
+    padding: 12px 16px 12px 40px;
+    border: 1px solid #e2e8f0;
+    border-radius: 6px;
+    font-size: 14px;
+    background: #ffffff;
+    transition: all 0.3s ease;
+}
+
+.input-icon-container input[type="password"] {
+    padding-right: 40px;
+}
+
+.input-icon-container input:focus {
+    outline: none;
+    border-color: #7c3aed;
+    box-shadow: 0 0 0 3px rgba(124, 58, 237, 0.1);
+}
+
+.form-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 12px;
+    margin-top: 30px;
+    padding-top: 20px;
+    border-top: 1px solid #f1f5f9;
+}
+
+.btn-limpiar {
+    padding: 10px 20px;
+    background: transparent;
+    color: #64748b;
+    border: 1px solid #cbd5e1;
+    border-radius: 6px;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.btn-limpiar:hover {
+    background: #f8fafc;
+    color: #334155;
+    border-color: #94a3b8;
+}
+
+.btn-guardar-alumno {
+    padding: 10px 24px;
+    background: #1f22d4;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.btn-guardar-alumno:hover {
+    background: #6d28d9;
 }
