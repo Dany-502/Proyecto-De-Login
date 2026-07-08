@@ -34,7 +34,7 @@ function validarcorreo() {
         return false;
     } else if (esvalido) {
         mensajeError.innerText = "";
-        mensajeExito.innerText = "Correo válido";
+        mensajeExito.innerText = "";
         return true;
     } else {
         mensajeError.innerText = "Correo inválido";
@@ -44,7 +44,7 @@ function validarcorreo() {
 }
 
 function validarlongitud() {
-    let cadena = document.getElementById("celular").value;
+    let cadena = document.getElementById("celular").value; //* se debe modificar
     let arreglo = cadena.split('').map(Number);
     var mensajeError = document.getElementById('error-celular');
     var mensajeExito = document.getElementById('exito-celular');
@@ -58,6 +58,7 @@ function validarlongitud() {
 }
 
 function validarcontrasena() {
+
     var contrasena = document.getElementById('password').value.trim();
     var mensajeError = document.getElementById('error-contraseña');
     var mensajeExito = document.getElementById('exito-contraseña');
@@ -66,5 +67,9 @@ function validarcontrasena() {
         mensajeError.innerText = "La contraseña no puede estar vacía.";
         mensajeExito.innerText = "";
         return false;
+    } else {
+        mensajeError.innerText = "";
+        mensajeExito.innerText = "";
+        return true;
     }
 }

@@ -7,10 +7,24 @@
     <title>Dashboard - Sistema</title>
     <link rel="stylesheet" href="css/visualesIndex.css">
     <script src="js/funcionesModal.js"></script>
-
 </head>
 
 <body>
+
+    <nav class="navbar">
+        <div class="user-menu-container">
+            <button id="user-menu-btn" class="user-btn">
+                <img src="img/usuario.png" alt="User" class="nav-user-icon">
+                <span id="user-name">Miguel Alberto</span>
+                <img src="img/flecha.png" class="nav-flecha">
+            </button>
+
+            <ul id="dropdown-menu" class="dropdown-content">
+                <li><a href="#" id="btn-logout">Cerrar Sesión</a></li>
+            </ul>
+        </div>
+    </nav>
+
     <input type="checkbox" id="check">
     <label for="check">
         <img src="img/menu-hamburguesa.png" alt="menu" id="bar">
@@ -29,38 +43,62 @@
 
                 <ul class="submenu">
                     <li><a href="#" id="btn-abrir-modal"><img src="img/agregar-usuario.png">Registrarse</a></li>
+                    <li><a href="#" id="btn-abrir-modal-alumnos"><img src="img/usuario.png">Alumnos</a></li>
                 </ul>
             </li>
-
         </ul>
     </div>
-    <div class="bg">
-    </div>
-
-
-    <!-- EJEMPLO DE APLICACION DE MODAL -->
-    <!--
     <div id="modal-registro" class="contenedor_modal oculto">
         <div class="modal">
-            <i class="cerrar_modal fas fa-times" id="btn-cerrar-modal">X</i>
-            <h3>Registrarse</h3>
+            <i class="cerrar_modal" id="btn-cerrar-modal">X</i>
+            <h3>Captura de Usuario</h3>
             <form id="form-registro">
                 <div class="form-group">
                     <label for="nombre">Nombre de usuario</label>
-                    <input type="text" id="nombre" name="nombre" required>
+                    <input type="text" id="nombre" required oninput="validarsololetras()">
+                    <span id="error-nombre" style="color: red; font-size: 12px; display: block;"></span>
+                    <span id="exito-nombre" style="color: green; font-size: 12px; display: block;"></span>
                 </div>
                 <div class="form-group">
-                    <label for="correo">Correo Electrónico</label>
-                    <input type="email" id="correo" name="correo" required>
+                    <label for="username-registro">Correo Electrónico</label>
+                    <input type="email" id="username-registro" placeholder="ejemplo@correo.com" required
+                        oninput="validarcorreoRegistro()">
+                    <span id="error-correo-reg" style="color: red; font-size: 12px; display: block;"></span>
+                    <span id="exito-correo-reg" style="color: green; font-size: 12px; display: block;"></span>
                 </div>
                 <div class="form-group">
-                    <label for="password">Contraseña</label>
-                    <input type="password" id="password" name="password" required>
+                    <label for="password-registro">Contraseña</label>
+                    <input type="password" id="password-registro" required oninput="validarContrasenaEstricta()">
+                    <span id="error-contraseña-reg" style="color: red; font-size: 12px; display: block;"></span>
+                    <span id="exito-contraseña-reg" style="color: green; font-size: 12px; display: block;"></span>
                 </div>
-                <button type="submit" class="btn-submit">Registrar</button>
+                <button type="submit" class="btn-submit">Guardar Usuario</button>
             </form>
         </div>
-    </div>-->
+    </div>
+
+    <div id="modal-alumnos" class="contenedor_modal oculto">
+        <div class="modal">
+            <i class="cerrar_modal" id="btn-cerrar-modal-alumnos">X</i>
+            <h3>Formulario de Alumnos</h3>
+            <form id="form-alumnos">
+                <div class="form-group">
+                    <label for="num-control">Número de Control</label>
+                    <input type="text" id="num-control" placeholder="Ej. 123456" required
+                        oninput="validarlongitudControl()">
+                    <span id="error-control" style="color: red; font-size: 12px; display: block;"></span>
+                    <span id="exito-control" style="color: green; font-size: 12px; display: block;"></span>
+                </div>
+                <div class="form-group">
+                    <label for="edad-alumno">Edad</label>
+                    <input type="number" id="edad-alumno" placeholder="Ej. 20" required oninput="validarEdad()">
+                    <span id="error-edad" style="color: red; font-size: 12px; display: block;"></span>
+                    <span id="exito-edad" style="color: green; font-size: 12px; display: block;"></span>
+                </div>
+                <button type="submit" class="btn-submit">Registrar Alumno</button>
+            </form>
+        </div>
+    </div>
 </body>
 
 </html>
