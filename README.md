@@ -73,7 +73,16 @@ Se crearon las interfaces modales flotantes cubiertas con fondos oscuros control
 
 ## Capturas de Pantalla
 
-1. **Pantalla de Inicio de Sesión:** img/captura-sesion1.png img/captura-sesion2.png
+1. **Pantalla de Inicio de Sesión:**
+<img width="495" height="532" alt="captura-sesion1" src="https://github.com/user-attachments/assets/78c712ef-b1f8-4b9e-9310-883d35fdc4bd" />
+<img width="453" height="507" alt="captura-sesion2" src="https://github.com/user-attachments/assets/6465dcbf-a7ba-40b7-b7c4-866870ffa7d5" />
+
 2. **Dashboard Principal:** img/cap-dashboard.png
+<img width="1918" height="741" alt="cap-dashboard" src="https://github.com/user-attachments/assets/e56d64f4-52ed-4199-aed1-ba22bd237d4f" />
+
 3. **Despliegue del Menú de Usuario:** img/Menu-user.png
+
+<img width="417" height="251" alt="Menu-user" src="https://github.com/user-attachments/assets/3d36057f-3355-4617-9e49-f14b38eb17c6" />
+
 4. **Modal Captura de Usuarios:** img/moda-cap.png
+<img width="1891" height="1007" alt="moda-cap" src="https://github.com/user-attachments/assets/874db2a4-6352-4f0e-ab1b-e555fc7f38cc" />
