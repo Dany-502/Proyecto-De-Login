@@ -1,57 +1,3 @@
-document.addEventListener('DOMContentLoaded', function () {
-    const btnMenuUsuario = document.getElementById('user-menu-btn');
-    const menuDesplegable = document.getElementById('dropdown-menu');
-    const btnSalir = document.getElementById('btn-logout');
-
-    if (btnMenuUsuario) {
-        btnMenuUsuario.addEventListener('click', function (event) {
-            event.stopPropagation();
-            menuDesplegable.classList.toggle('mostrar');
-        });
-    }
-
-    document.addEventListener('click', function () {
-        if (menuDesplegable) menuDesplegable.classList.remove('mostrar');
-    });
-
-    if (btnSalir) {
-        btnSalir.addEventListener('click', function (event) {
-            event.preventDefault();
-            window.location.href = "login.html";
-        });
-    }
-
-    const btnCaptura = document.getElementById('btn-abrir-modal');
-    const modalRegistro = document.getElementById('formulario-captura');
-
-    if (btnCaptura) {
-        btnCaptura.addEventListener('click', (e) => {
-            e.preventDefault();
-            modalRegistro.style.display = 'block';
-        });
-    }
-
-    const btnGuardarAlumno = document.getElementById('btn-guardar-alumno');
-    if (btnGuardarAlumno) {
-        btnGuardarAlumno.addEventListener('click', function (e) {
-            e.preventDefault();
-            // Simulación — las validaciones las implementará Mike
-            alert("¡Usuario capturado con éxito!");
-
-            // Limpiar los inputs manualmente (no es un form)
-            const inputs = document.querySelectorAll('#form-registro input');
-            inputs.forEach(input => input.value = '');
-        });
-    }
-
-    const btnLimpiar = document.getElementById('btn-limpiar');
-    if (btnLimpiar) {
-        btnLimpiar.addEventListener('click', function () {
-            const inputs = document.querySelectorAll('#form-registro input');
-            inputs.forEach(input => input.value = '');
-        });
-    }
-});
 function validarsololetras() {
     var nombre = document.getElementById('nombre').value;
     var expReg = /^[a-zA-ZÁÉÍÓÚÑáéíóúñ ]+$/;
@@ -59,15 +5,24 @@ function validarsololetras() {
     var mensajeError = document.getElementById('error-nombre');
     var mensajeExito = document.getElementById('exito-nombre');
 
-    if (nombre.trim() === "") {
+    var nombreLimpio = nombre.trim();
+
+    if (nombreLimpio === "") {
         mensajeError.innerText = "El nombre no puede estar vacío.";
         mensajeExito.innerText = "";
         return false;
-    } else if (esvalido) {
+    }
+    else if (nombreLimpio.length < 3) {
+        mensajeError.innerText = "El nombre debe tener al menos 3 caracteres.";
+        mensajeExito.innerText = "";
+        return false;
+    }
+    else if (esvalido) {
         mensajeError.innerText = "";
         mensajeExito.innerText = "Nombre válido";
         return true;
-    } else {
+    }
+    else {
         mensajeError.innerText = "El nombre debe tener solo letras";
         mensajeExito.innerText = "";
         return false;
@@ -169,9 +124,8 @@ function validarFechaNacimiento() {
         return false;
     }
 
-    // Calcular edad basándose en el año actual (2026)
     var fechaNacimiento = new Date(fechaInput);
-    var hoy = new Date("2026-07-08"); // Forzamos año del contexto actual del sistema 
+    var hoy = new Date("2026-07-08");
     var edad = hoy.getFullYear() - fechaNacimiento.getFullYear();
     var mes = hoy.getMonth() - fechaNacimiento.getMonth();
 
@@ -193,8 +147,6 @@ function validarFechaNacimiento() {
         return true;
     }
 }
-
-// Limpia todas las etiquetas de texto de error/exito en pantalla
 function limpiarSpans() {
     const spans = document.querySelectorAll('#form-registro span');
     spans.forEach(span => span.innerText = '');

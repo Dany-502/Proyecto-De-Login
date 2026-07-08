@@ -7,6 +7,7 @@
     <title>Dashboard - Sistema</title>
     <link rel="stylesheet" href="css/visualesIndex.css">
     <script src="js/funcionesModal.js"></script>
+    <script src="js/validaciones.js"></script>
 </head>
 
 <body>
@@ -51,32 +52,56 @@
         <div id="formulario-captura" class="contenedor-formulario" style="display: none;">
             <div id="form-registro" class="simulated-form">
                 <h2>Captura de Datos</h2>
+
                 <div class="form-row full-width">
                     <div class="grupoFormulario">
                         <label for="nombre">Nombre Completo</label>
-                        <input type="text" id="nombre" placeholder="Ej. Ingrese su nombre completo">
+                        <input type="text" id="nombre" placeholder="Ej. Ingrese su nombre completo"
+                            oninput="validarsololetras()">
+                        <span id="error-nombre"
+                            style="color: red; font-size: 12px; display: block; margin-top: 5px;"></span>
+                        <span id="exito-nombre"
+                            style="color: green; font-size: 12px; display: block; margin-top: 5px;"></span>
                     </div>
                 </div>
 
                 <div class="form-row">
                     <div class="grupoFormulario">
                         <label for="username-registro">Correo Electrónico</label>
-                        <input type="email" id="username-registro" placeholder="estudiante@correo.com">
+                        <input type="email" id="username-registro" placeholder="estudiante@correo.com"
+                            oninput="validarcorreoRegistro()">
+                        <span id="error-correo-reg"
+                            style="color: red; font-size: 12px; display: block; margin-top: 5px;"></span>
+                        <span id="exito-correo-reg"
+                            style="color: green; font-size: 12px; display: block; margin-top: 5px;"></span>
                     </div>
                     <div class="grupoFormulario">
                         <label for="num-control">Número de Control</label>
-                        <input type="text" id="num-control" placeholder="123456">
+                        <input type="text" id="num-control" placeholder="123456" oninput="validarlongitudControl()">
+                        <span id="error-control"
+                            style="color: red; font-size: 12px; display: block; margin-top: 5px;"></span>
+                        <span id="exito-control"
+                            style="color: green; font-size: 12px; display: block; margin-top: 5px;"></span>
                     </div>
                 </div>
 
                 <div class="form-row">
                     <div class="grupoFormulario">
                         <label for="password-registro">Contraseña</label>
-                        <input type="password" id="password-registro" placeholder="••••••••">
+                        <input type="password" id="password-registro" placeholder="••••••••"
+                            oninput="validarContrasenaEstricta()">
+                        <span id="error-contraseña-reg"
+                            style="color: red; font-size: 12px; display: block; margin-top: 5px;"></span>
+                        <span id="exito-contraseña-reg"
+                            style="color: green; font-size: 12px; display: block; margin-top: 5px;"></span>
                     </div>
                     <div class="grupoFormulario">
                         <label for="fecha-nac">Fecha de Nacimiento</label>
-                        <input type="date" id="fecha-nac">
+                        <input type="date" id="fecha-nac" oninput="validarFechaNacimiento()">
+                        <span id="error-fecha"
+                            style="color: red; font-size: 12px; display: block; margin-top: 5px;"></span>
+                        <span id="exito-fecha"
+                            style="color: green; font-size: 12px; display: block; margin-top: 5px;"></span>
                     </div>
                 </div>
 
