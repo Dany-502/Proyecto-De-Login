@@ -8,9 +8,12 @@
   * Alonso Heredia Miguel Alberto
   * Rodriguez Juarez Jose Daniel
 * **Grupo:** 7SE
+* **Link pagina:** https://dany-502.github.io/Proyecto-De-Login/
 
-
-
+---
+## Cuenta de prueba
+* Cuenta: miguel@gmail.com
+Contraseña: Mike123!
 
 ---
 
